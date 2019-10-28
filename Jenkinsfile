@@ -6,9 +6,6 @@ pipeline {
             args '-v /home/ec2-user/caches3:/var/jenkins_home/caches:rw'
             }
     }
-    environment {
-        CI = 'true' 
-    }
     stages {
         stage('Build') { 
             steps {
