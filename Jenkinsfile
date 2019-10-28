@@ -3,7 +3,7 @@ pipeline {
         docker {
             image 'node:6-alpine' 
             args '-p 3000:3000'
-            args '-v /home/ec2-user/caches2:/var/jenkins_home/caches'
+            args '-v /home/ec2-user/caches2:/var/jenkins_home/caches:rw'
             }
     }
     environment {
