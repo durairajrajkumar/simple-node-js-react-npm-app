@@ -13,6 +13,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm i -g npm'
+                sh 'npm install strip --save'
                 sh 'npm install' 
             }
         }
