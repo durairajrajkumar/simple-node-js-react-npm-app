@@ -2,8 +2,8 @@ pipeline {
     agent {
         docker {
             image 'node:6-alpine' 
-            args '-p 3000:3000'
-            args '-v /home/ec2-user/caches:/var/jenkins_home/caches'
+            args '-p 3000:3000 -p 5000:5000'
+            args '-u 0:0'
             }
     }
     environment {
@@ -13,7 +13,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm cache clean'
-                sh 'npm install --loglevel verbose'
+                sh 'npm install --unsafe-perm --loglevel verbose'
             }
         }
         stage('Test') { 
