@@ -13,7 +13,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm cache clean'
-                sh 'npm install ionic --loglevel verbose'
+                sh 'npm install --loglevel verbose'
             }
         }
         stage('Test') { 
