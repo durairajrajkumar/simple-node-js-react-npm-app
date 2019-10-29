@@ -12,8 +12,6 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'cd /var/jenkins_home/workspace/simple-node-js-react-npm-app'
-                sh 'rm -r node_modules'
                 sh 'npm cache clean'
                 sh 'npm install' 
             }
