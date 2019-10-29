@@ -12,7 +12,8 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'npm install --no-optional' 
+                sh 'npm i -g npm'
+                sh 'npm install' 
             }
         }
         stage('Test') { 
