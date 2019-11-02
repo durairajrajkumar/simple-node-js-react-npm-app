@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'npm install --unsafe-perm --loglevel verbose'
+                sh 'npm install --unsafe-perm --loglevel'
             }
         }
         stage('Test') { 
