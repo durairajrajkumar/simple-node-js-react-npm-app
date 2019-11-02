@@ -1,14 +1,6 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine' 
-            args '-p 3000:3000 -p 5000:5000'
-            args '-u 0:0'
-            }
-    }
-    environment {
-        CI = 'true'
-    }
+    agent any
+    tools {nodejs "NodeJS11.1.0"}
     stages {
         stage('Build') { 
             steps {
@@ -17,6 +9,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
+                sh 'chmod 755 ./jenkins/scripts/test.sh'
                 sh './jenkins/scripts/test.sh' 
             }
         }
